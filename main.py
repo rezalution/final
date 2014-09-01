@@ -14,7 +14,7 @@ class image_post(webapp2.RequestHandler):
 		
 		newImage.image = db.Blob(image)
 		
-		newImage.get()
+		newImage.put()
 		self.response.write(""<meta http-equiv="refresh" content="0.5;URL='/'">"")
 
 class MainHandler(webapp2.RequestHandler):
