@@ -21,7 +21,7 @@ class MainHandler(webapp2.RequestHandler):
 	def get(self):
 		self.response.out.write("Hello")
 
-		pictures = geopic.gql(" ORDER BY date ASC")
+		pictures = geopic.gql("ORDER BY date ASC")
 		for pic in pictures:
 			self.response.write("<img src='/img?photo=%s'>" % pic.key())
 
