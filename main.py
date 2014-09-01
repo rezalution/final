@@ -23,7 +23,7 @@ class MainHandler(webapp2.RequestHandler):
 
 		pictures = geopic.gql("ORDER BY date ASC")
 		for pic in pictures:
-			self.response.write("<img src='/img?photo=%s'>" % pic.key())
+			self.response.write("<img src='/img?photo=%s'>     " % pic.key())
 
 class serveImage(webapp2.RequestHandler):
 	def get(self):
@@ -34,6 +34,6 @@ class serveImage(webapp2.RequestHandler):
 
 application = webapp2.WSGIApplication([
 	('/',MainHandler),
-	('/imagepost', image_post),
+	('/image_post', image_post),
 	('/img', serveImage)
 ], debug=true)
